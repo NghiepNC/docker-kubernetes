@@ -63,9 +63,8 @@
    minikube dashboard
    ```
    ![miniube](./images/minikube_dashboard1.png)  
-   Một thông báo đề xuất rằng một số tính năng của Dashboard yêu cầu metrics-server để có thể hoạt động đầy đủ. 
-
-   ![miniube](./images/minikube_dashboard2.png)
+   Một thông báo đề xuất rằng một số tính năng của Dashboard yêu cầu metrics-server để có thể hoạt động đầy đủ. Bật lên và chạy lại ***minikube dashboard*** sẽ xuất hiện URL dashboard 
+   ![miniube](./images/minukube_dashboard2.png)
 
    Trả về URL mình có thể truy cập được dashboard rồi!
    ![miniube](./images/minikube_dashboard3.png)
