@@ -105,3 +105,50 @@ Sau khi hiểu về kiến trúc và khái niệm cốt lõi, bạn có thể:
 - Tìm hiểu về các đối tượng Kubernetes (Pods, Deployments, Services)
 - Học cách tạo và quản lý cấu hình
 - Thực hành triển khai ứng dụng đơn giản 
+
+## 11. TOM TẮT Các Khái Niệm Cốt Lõi
+![components](./images/core_components.png)
+Bài giảng này tóm tắt các khái niệm quan trọng mà bạn sẽ gặp trong khóa học Kubernetes:
+
+### 11.1 Cluster
+- Là tập hợp các máy chủ (nodes), bao gồm cả Master Node và Worker Nodes
+- Tạo thành môi trường triển khai ứng dụng của bạn
+
+### 11.2 Nodes
+Nodes là các máy tính vật lý hoặc ảo, có khả năng phần cứng nhất định, dùng để lưu trữ và chạy các Pod. Các nodes giao tiếp với nhau trong Cluster.
+
+#### Master Node
+- Quản lý các Pod và Worker Nodes
+- Điều khiển và giám sát toàn bộ hệ thống
+
+#### Worker Nodes
+- Chạy các Pod
+- Chứa các container ứng dụng
+- Cung cấp tài nguyên cần thiết cho containers
+
+### 11.3 Pods
+- Là đơn vị quản lý cơ bản trong Kubernetes
+- Chứa các container ứng dụng và tài nguyên cần thiết
+- Mỗi Pod quản lý một hoặc nhiều containers
+- Được quản lý bởi Master Node
+- Khi một Pod được tạo ra, nó tương đương với việc khởi chạy container trong Pod đó
+
+### 11.4 Containers
+- Các Docker containers là các containers mà Kubernetes quản lý
+- Kubernetes sẽ khởi động containers trong Pods
+
+### 11.5 Services
+- Là một tập hợp logic của Pods
+- Được gán một IP address độc lập với container
+- Giúp expose các Pods ra ngoài thế giới
+- Đảm bảo Pods có thể truy cập được qua IP hoặc tên miền cụ thể
+- Proxy xử lý lưu lượng mạng đến và đi từ Pods
+- Phân phối lưu lượng đến các container đúng cách
+
+### 11.6 Tóm tắt
+- Pods và Containers là các khái niệm cơ bản trong Kubernetes
+- Nodes và Cluster tạo thành cơ sở hạ tầng cho việc triển khai ứng dụng
+- Services giúp tiếp cận các Pods từ bên ngoài và quản lý lưu lượng mạng
+
+### 11.7 Kết luận
+Đây là các khái niệm lý thuyết cơ bản của Kubernetes. Để hiểu rõ hơn, bạn sẽ bắt đầu làm việc với Kubernetes trong các phần tiếp theo của khóa học. 

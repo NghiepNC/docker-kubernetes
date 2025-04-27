@@ -4,6 +4,8 @@
 
 Chào mừng bạn đến với phần Kubernetes trong lộ trình học Docker & Kubernetes. Phần này đánh dấu sự bắt đầu của hành trình tìm hiểu về container orchestration và triển khai quy mô lớn.
 
+
+
 ## Thách thức khi triển khai Docker containers thủ công
 
 Khi triển khai Docker containers trên các máy chủ ảo (ví dụ: EC2 instances), bạn sẽ gặp phải một số vấn đề:
@@ -23,6 +25,60 @@ Khi triển khai Docker containers trên các máy chủ ảo (ví dụ: EC2 ins
    - Có thể xảy ra tình trạng container bị quá tải
    - Thiếu cơ chế tự động phân phối lưu lượng
 
+## Kubernetes là gì?
+
+Kubernetes là một hệ thống mã nguồn mở giúp tự động hóa việc triển khai, mở rộng, và quản lý các ứng dụng containerized. Nó không phải là một dịch vụ của nhà cung cấp đám mây, mà là một framework giúp quản lý containers trên nhiều nền tảng đám mây.
+
+![Kubernetes Architecture](./images/kubernetes-architecture.png)
+
+Kubernetes giúp bạn:
+- Định nghĩa các yêu cầu về triển khai
+- Tự động mở rộng containers
+- Giám sát và thay thế containers khi bị lỗi
+
+
+### Lợi ích của Kubernetes
+
+1. **Độc lập với nhà cung cấp đám mây**
+   - Mã nguồn mở, có thể sử dụng với bất kỳ nhà cung cấp đám mây nào
+   - Có thể tự cài đặt trên các máy chủ riêng
+   - Hỗ trợ đa nền tảng
+   - Kết hợp đơn giản khi khai báo tích hợp Cloud vào kubernetes
+   ![Kubernetes](./images/image.png)
+
+2. **Tính chuẩn hóa**
+   - Một file cấu hình duy nhất cho toàn bộ triển khai
+   - Định nghĩa số lượng containers, yêu cầu tự động thay thế
+   - Có thể sử dụng lại trên nhiều môi trường
+   - Chỉ cần điều chỉnh một số tham số riêng biệt của nhà cung cấp
+
+### Kubernetes không phải là gì
+
+1. **Không phải là dịch vụ đám mây**
+   - Không phải dịch vụ của AWS, Azure hay bất kỳ nhà cung cấp nào
+   - Là dự án mã nguồn mở có thể chạy trên nhiều nền tảng
+
+2. **Không thay thế Docker**
+   - Là công cụ bổ sung cho Docker
+   - Giúp quản lý containers Docker trên quy mô lớn
+   - Hỗ trợ nhiều máy chủ
+
+3. **Không phải dịch vụ trả phí**
+   - Bản thân Kubernetes là miễn phí
+   - Chỉ phải trả phí cho tài nguyên đám mây khi sử dụng dịch vụ của nhà cung cấp
+
+### So sánh với Docker-Compose
+
+
+| Đặc điểm | Docker-Compose | Kubernetes |
+|----------|---------------|------------|
+| Quy mô | Một máy tính | Nhiều máy chủ |
+| Mục đích | Quản lý ứng dụng container trên một máy | Triển khai và quản lý containers trên nhiều máy |
+| Tính năng | Cấu hình đơn giản | Hệ thống quản lý container toàn diện |
+| Tự động hóa | Hạn chế | Nhiều tính năng tự động hóa |
+| Cân bằng tải | Không hỗ trợ | Hỗ trợ mạnh mẽ |
+| Mở rộng quy mô | Thủ công | Tự động |
+
 ## Tại sao cần Kubernetes?
 
 Kubernetes giải quyết các thách thức trên thông qua:
@@ -41,10 +97,6 @@ Kubernetes giải quyết các thách thức trên thông qua:
    - Tự động phân phối lưu lượng HTTP đồng đều
    - Tránh tình trạng container bị quá tải
    - Tối ưu hóa việc sử dụng tài nguyên
-
-## Kubernetes là gì?
-
-Kubernetes (thường được viết tắt là K8s) không chỉ là một công cụ - nó là một framework toàn diện gồm các chuẩn và khái niệm được thiết kế để quản lý và triển khai containers ở quy mô lớn, độc lập với nhà cung cấp đám mây. Nó cung cấp một nền tảng mạnh mẽ để tự động hóa việc triển khai, mở rộng quy mô và vận hành các container ứng dụng trên các cụm máy chủ.
 
 ## Cấu trúc khóa học
 
