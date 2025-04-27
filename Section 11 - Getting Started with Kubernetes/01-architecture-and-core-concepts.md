@@ -1,0 +1,107 @@
+# Kiến trúc và Khái niệm Cốt lõi của Kubernetes
+
+![Kubernetes Architecture](images/k8s_architect.png)
+
+## 1. Pod
+
+Pod là đơn vị nhỏ nhất trong Kubernetes. Mỗi pod chứa ít nhất một container và có thể chứa nhiều container cần làm việc cùng nhau.
+
+Pod sẽ chạy trên các worker nodes, nơi container thực sự được thực thi.
+
+## 2. Worker Node
+
+Worker node là các máy chủ (có thể là máy ảo hoặc máy vật lý) nơi Kubernetes chạy các pod.
+
+Các worker node cần có:
+- CPU và bộ nhớ để chạy các pod
+- Khả năng chạy nhiều pod trên cùng một node
+- Kết nối mạng để giao tiếp với các node khác
+
+## 3. Proxy
+
+Kubernetes sử dụng proxy để kiểm soát lưu lượng mạng của các pod trên worker node.
+
+Proxy có các chức năng:
+- Kết nối các pod với internet
+- Đảm bảo lưu lượng từ người dùng đến đúng container
+- Cân bằng tải giữa các pod
+- Quản lý kết nối mạng nội bộ
+
+## 4. Master Node và Control Plane
+
+Master node (hoặc control plane) điều khiển và quản lý toàn bộ cluster.
+
+Các thành phần chính:
+- API Server: Điểm giao tiếp chính cho tất cả các hoạt động
+- Scheduler: Phân bổ pod vào các worker node
+- Controller Manager: Quản lý các controller khác nhau
+- etcd: Lưu trữ dữ liệu cluster
+
+Trong môi trường production, master node thường được phân phối qua nhiều máy chủ để đảm bảo high availability.
+
+## 5. Cluster
+
+Một cluster là sự kết hợp giữa master node và worker node, tạo thành một mạng lưới các máy chủ kết nối với nhau.
+
+Các thành phần tương tác:
+- Control plane gửi lệnh đến cloud provider API
+- Tạo và quản lý tài nguyên (EC2 instances, load balancer, v.v.)
+- Triển khai và quản lý các ứng dụng
+
+## 6. Quy trình hoạt động
+
+1. **Định nghĩa trạng thái mong muốn**
+   - Tạo file cấu hình YAML/JSON
+   - Mô tả trạng thái mong muốn của ứng dụng
+   - Gửi cấu hình đến Kubernetes API
+
+2. **Tự động hóa**
+   - Kubernetes tự động triển khai
+   - Giám sát trạng thái
+   - Thay thế pod khi cần
+
+3. **Mở rộng và phân phối**
+   - Tự động mở rộng khi tải tăng
+   - Phân phối pod trên các worker node
+   - Đảm bảo tính sẵn sàng cao
+
+## 7. Tính mở rộng
+
+Kubernetes cung cấp các tính năng mở rộng:
+- Tự động thêm/bớt pod theo nhu cầu
+- Phân phối tải đồng đều
+- Tối ưu hóa tài nguyên
+- Hỗ trợ nhiều loại workload
+
+## 8. Lợi ích
+
+1. **Độc lập với nhà cung cấp**
+   - Mã nguồn mở
+   - Chạy trên bất kỳ nền tảng nào
+   - Không phụ thuộc vào dịch vụ đám mây cụ thể
+
+2. **Tính chuẩn hóa**
+   - Cấu hình nhất quán
+   - Quy trình triển khai tiêu chuẩn
+   - Dễ dàng di chuyển giữa các môi trường
+
+3. **Tự động hóa**
+   - Quản lý container tự động
+   - Mở rộng quy mô tự động
+   - Phục hồi tự động khi có sự cố
+
+## 9. Tóm tắt
+
+Kubernetes cung cấp:
+- Cách thức tiêu chuẩn hóa để triển khai containers
+- Quản lý và mở rộng containers trên nhiều máy chủ
+- Giảm phức tạp trong quản lý ứng dụng container
+- Triển khai dễ dàng trên nhiều nền tảng
+- Độc lập với nhà cung cấp đám mây
+
+## 10. Các bước tiếp theo
+
+Sau khi hiểu về kiến trúc và khái niệm cốt lõi, bạn có thể:
+- Tìm hiểu về các đối tượng Kubernetes (Pods, Deployments, Services)
+- Học cách tạo và quản lý cấu hình
+- Thực hành triển khai ứng dụng đơn giản 
