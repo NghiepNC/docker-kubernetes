@@ -1,6 +1,6 @@
 # Kiến trúc và Khái niệm Cốt lõi của Kubernetes
 
-![Kubernetes Architecture](images/k8s_architect.png)
+![Kubernetes Architecture](./images/k8s_architect.png)
 
 ## 1. Pod
 
